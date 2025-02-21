@@ -96,8 +96,8 @@ resource "aws_s3_bucket_website_configuration" "static-website2" {
 # Create CloudFront distribution from public S3 bucket
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
-    domain_name = aws_s3_bucket.s3-bucket-dev.bucket_regional_domain_name
-    origin_id   = aws_s3_bucket.s3-bucket-dev.id
+    domain_name = aws_s3_bucket.s3-bucket-prod.bucket_regional_domain_name
+    origin_id   = aws_s3_bucket.s3-bucket-prod.id
 
     # Use a public custom origin config instead of OAI
     custom_origin_config {
@@ -117,7 +117,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD", "OPTIONS"]
     cached_methods   = ["GET", "HEAD"]
-    target_origin_id = aws_s3_bucket.s3-bucket-dev.id
+    target_origin_id = aws_s3_bucket.s3-bucket-prod.id
 
     forwarded_values {
       query_string = false
