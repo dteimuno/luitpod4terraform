@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HealthCare Hospital</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #50b3a2;
+            color: white;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+            position: fixed; /* Make header sticky */
+            width: 100%;
+            top: 0;
+            z-index: 1000; /* Ensure header is above other content */
+        }
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 20px;
+        }
+        header ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            overflow: hidden;
+        }
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
+            font-size:2.5em;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+            font-size: 2.8em;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        header .highlight, header .current a {
+            color: #e8491d;
+            font-weight: bold;
+        }
+        header a:hover {
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .section {
+            padding: 50px 0;
+            text-align: center;
+            margin-top: 80px; /* Add top margin to account for sticky header */
+        }
+        .section h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+        .section p {
+            font-size: 2.8em;
+        }
+        .section ul {
+            padding: 0;
+            margin: 0;
+            list-style: none; /* Remove default list styling */
+        }
+        .section li {
+            font-size: 1.5em; /* Adjust the font size to be more proportionate */
+            text-align: left; /* Align the text to the left */
+            list-style-position: inside; /* Position the bullets inside the content flow */
+            list-style-type: disc; /* Add bullet styling */
+            margin: 10px 0; /* Add some space between list items */
+        }
+        .section-content {
+            text-align: left;
+            margin: 20px auto;
+            width: 70%;
+        }
+        .section-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            color: #fff;
+            background-color: #50b3a2;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #429388;
+        }
+        /* Add image placeholders */
+        .home-image, .services-image, .about-image, .contact-image {
+            background: url('path_to_your_image.jpg') no-repeat center center;
+            background-size: cover;
+            height: 300px; /* Adjust as needed */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">HealthCare</span> Hospital</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="home" class="section">
+        <h1>Welcome to HealthCare Hospital</h1>
+        <div class="section-content">
+            <p>Welcome to HealthCare Hospital, a place where we care about your health as much as you do. Our state-of-the-art facilities and experienced staff are dedicated to providing you with the best medical care and support.</p>
+            <p>From general health check-ups to advanced surgical procedures, we offer a wide range of medical services to meet the diverse needs ofour patients. Our commitment to excellence and patient care makes us one of the leading hospitals in the region.</p>
+        </div>
+    </div>
+
+    <div id="services" class="section">
+        <h1>Our Services</h1>
+        <div class="section-content">
+            <p>Our hospital offers a comprehensive range of medical services including:</p>
+            <ul>
+                <li>General Medicine and Family Care</li>
+                <li>Emergency and Trauma Services</li>
+                <li>Specialized Surgery</li>
+                <li>Pediatrics and Neonatal Care</li>
+                <li>Cardiology and Neurology</li>
+                <li>Orthopedics</li>
+                <li>Oncology</li>
+                <li>Rehabilitation Services</li>
+            </ul>
+            <p>We are equipped with the latest medical technology and staffed by a team of highly skilled healthcare professionals committed to providing personalized care.</p>
+        </div>
+    </div>
+
+    <div id="about" class="section">
+        <h1>About Us</h1>
+        <div class="section-content">
+            <p>HealthCare Hospital has been serving the community for over two decades, offering exceptional medical care to patients of all ages. Our hospital is known for its patient-centered approach, state-of-the-art facilities, and a commitment to maintaining the highest standards of medicalexcellence.</p>
+            <p>Our team of doctors, nurses, and administrative staff works tirelessly to ensure that each patient receives the best possible care ina comfortable and welcoming environment.</p>
+        </div>
+    </div>
+
+    <div id="contact" class="section">
+        <h1>Contact Us</h1>
+        <div class="section-content">
+            <p>If you have any questions or need to schedule an appointment, please contact us:</p>
+            <p><strong>Phone:</strong> 1-800-555-1234</p>
+            <p><strong>Email:</strong> contact@healthcarehospital.com</p>
+            <p><strong>Address:</strong> 123 Health St, Wellness City, HC 12345</p>
+            <p>Our dedicated staff is here to assist you with your healthcare needs.</p>
+        </div>
+    </div>
+
+</body>
+</html>
