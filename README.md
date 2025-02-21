@@ -213,3 +213,4 @@ This stage requires manual approval before proceeding to deployment.
 }
 ```
 This stage deploys the extracted files to the development S3 bucket, making them available for the static website.
+
