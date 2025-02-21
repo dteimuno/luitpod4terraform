@@ -177,6 +177,11 @@ resource "aws_codepipeline" "pipeline" {
       owner    = "AWS"
       provider = "Manual"
       version  = "1"
+      configuration = {
+        notification_arn = aws_sns_topic.approval_notifications.arn
+      }
+
+
     }
   }
 
@@ -197,6 +202,15 @@ resource "aws_codepipeline" "pipeline" {
       }
     }
   }
+}
+
+resource "aws_sns_topic" "approval_notifications" {
+  name = "approval-notifications"
+}
+resource "aws_sns_topic_subscription" "approval_subscription" {
+  topic_arn = aws_sns_topic.approval_notifications.arn
+  protocol  = "email"
+  endpoint  = var.email # Replace with your email address
 }
 
 
