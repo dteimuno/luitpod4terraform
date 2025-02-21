@@ -6,7 +6,7 @@ This Terraform configuration sets up an AWS infrastructure that includes:
 - Public access policies for an S3 bucket
 - Static website hosting with CloudFront distribution
 - AWS CodePipeline for automated CI/CD deployment triggered by GitHub
-- A branching strategy where changes are first deployed to the `dev` branch, approved, and then merged into the `main` branch to trigger the CI/CD pipeline
+- A branching strategy where changes are first deployed to the `dev` branch, approved, and then merged into the `main` branch to trigger the CI/CD pipeline.
 
 ## AWS Provider Configuration
 ```hcl
