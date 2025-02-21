@@ -6,6 +6,7 @@ This Terraform configuration sets up an AWS infrastructure that includes:
 - Public access policies for an S3 bucket
 - Static website hosting with CloudFront distribution
 - AWS CodePipeline for automated CI/CD deployment triggered by GitHub
+- A branching strategy where changes are first deployed to the `dev` branch, approved, and then merged into the `main` branch to trigger the CI/CD pipeline
 
 ## AWS Provider Configuration
 ```hcl
@@ -141,7 +142,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 This configures a CloudFront distribution to serve content from the S3 bucket while restricting access from China (CN) and Russia (RU).
 
 ## AWS CodePipeline for CI/CD
-This CodePipeline is configured to automatically trigger a deployment when `index.html` and `error.html` are updated in a GitHub repository using a GitHub App connection.
+This CodePipeline is configured to automatically trigger a deployment when `index.html` and `error.html` are updated in a GitHub repository using a GitHub App connection. Changes are first deployed to the `dev` branch, reviewed, and approved before merging into the `main` branch, which triggers the final deployment.
 
 ```hcl
 resource "aws_codepipeline" "pipeline" {
@@ -173,7 +174,7 @@ resource "aws_codepipeline" "pipeline" {
     }
   }
 ```
-This stage pulls the `index.html` and `error.html` files from a GitHub repository using a GitHub App connection.
+This stage pulls the `index.html` and `error.html` files from the `main` branch of a GitHub repository after they have been merged from the `dev` branch.
 
 ### Approval Stage
 ```hcl
