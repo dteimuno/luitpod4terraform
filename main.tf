@@ -192,7 +192,7 @@ resource "aws_codepipeline" "pipeline" {
       input_artifacts = ["SourceOutput"] # Ensure it matches the output of the Source stage
 
       configuration = {
-        BucketName = aws_s3_bucket.s3-bucket-dev.bucket # Use .bucket instead of .id
+        BucketName = aws_s3_bucket.s3-bucket-prod.bucket # Use .bucket instead of .id
         Extract    = "true"
       }
     }
